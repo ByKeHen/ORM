@@ -1,5 +1,5 @@
 {
-  "name": "ORM快速搭建Koa开发环境依赖",
+  "name": "orm",
   "version": "1.0.0",
   "description": "这是一个自用的环境依赖基于koa",
   "main": "app.js",
