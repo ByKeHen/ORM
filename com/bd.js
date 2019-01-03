@@ -13,7 +13,11 @@ const sequelize = new Sequelize(db.db, db.name, db.password, {
         acquire: 30000,
         idle: 10000
     },
-    timezone: '+08:00'
+    timezone: '+08:00',
+    define: {
+        schema: "yio", // 表前缀
+        schemaDelimiter: '_', // 与表名的分隔符
+    }
 });
 
 sequelize.authenticate().then(res => {
