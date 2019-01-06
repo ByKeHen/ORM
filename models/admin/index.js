@@ -1,5 +1,4 @@
-const Sequelize = require('sequelize');
-const {sequelize, moment} = require('../../com/bd');
+const {Sequelize, sequelize, moment} = require('../../com/bd');
 
 /**
  * 在这里模型

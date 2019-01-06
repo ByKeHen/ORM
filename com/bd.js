@@ -31,6 +31,7 @@ client.on("error", err => console.log("Redis Error " + err));
 
 module.exports = {
     sequelize,
+    Sequelize,
     client,
     moment
 }
