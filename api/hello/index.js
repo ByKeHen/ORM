@@ -1,5 +1,6 @@
 
 const router = require('koa-router')();
+const { admin } = require('../../models'); // 引入模型示例
 
 /**
  *  api示例

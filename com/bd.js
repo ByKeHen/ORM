@@ -25,8 +25,10 @@ sequelize.authenticate()
     .catch(e => console.log('数据库链接失败!' + e))
 
 // 连接redis数据库
+let client = '';
+
 if (redisConfig.isUse) {
-    const client = redis.createClient(redisConfig); 
+    redis.createClient(redisConfig); 
     client.on("error", err => console.log("Redis Error " + err));
 }
 
