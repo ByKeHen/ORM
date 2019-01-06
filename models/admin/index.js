@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const {sequelize, moment} = require('../../com/bd');
 
 /**
- * 在这里书写模型和控制器
+ * 在这里模型
  */
 
 const admin = sequelize.define('admin', {
@@ -34,15 +34,5 @@ const admin = sequelize.define('admin', {
 admin.sync({force: false})
     .then(() => {} )
     .catch(e => console.log('创建admin表失败!'))
-
-admin.login = async (name,password) => {
-    return admin.findOne({
-        where: {
-        username: name,
-        password: password
-        },
-        attributes: ['id', 'username']
-    })
-}
 
 module.exports = admin;
