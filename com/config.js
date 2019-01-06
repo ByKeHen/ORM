@@ -19,10 +19,11 @@ module.exports = {
         renew: false, /** (boolean) renew session when session is nearly expired, so we can always keep user logged in. (default is false)*/
     },
     redisConfig: { // redis数据库信息
-        'port': 6379, // 端口
-        'host': '127.0.0.1', // 主机
-        'password': 'xxx', // 密码
-        'db': 1, // 选择数据库
-        'ttl': 10000000  
+        isUse: false, // 是否使用Redis数据库
+        port: 6379, // 端口
+        host: '127.0.0.1', // 主机
+        password: 'xxx', // 密码
+        db: 1, // 选择数据库
+        ttl: 10000000  
     }
 }

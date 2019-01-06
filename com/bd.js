@@ -24,10 +24,11 @@ sequelize.authenticate()
     .then(res => {})
     .catch(e => console.log('数据库链接失败!' + e))
 
-// 链接redis数据库
-const client = redis.createClient(redisConfig); 
-
-client.on("error", err => console.log("Redis Error " + err));
+// 连接redis数据库
+if (redisConfig.isUse) {
+    const client = redis.createClient(redisConfig); 
+    client.on("error", err => console.log("Redis Error " + err));
+}
 
 module.exports = {
     sequelize,
