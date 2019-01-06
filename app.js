@@ -3,6 +3,7 @@ const serve = require('koa-static');
 const session = require('koa-session');
 const bodyParams = require('koa-bodyparser');
 const config = require('./com/config');
+const router = require('./routers');
 const app = new koa();
 const port = 3000;
 
@@ -10,7 +11,7 @@ app.proxy = true; // 如果Nginx转发的请务必设置，否则拿不到ip
 app.keys = ['some secret hurr']; // cookie加密字符串
 app.use(session(config.sessionConfig,app));
 app.use(bodyParams());
-
+app.use(router());
 app.use(serve(__dirname + '/www'));
 
 app.listen(port, (err) => {

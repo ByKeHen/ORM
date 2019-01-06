@@ -20,18 +20,14 @@ const sequelize = new Sequelize(db.db, db.name, db.password, {
     }
 });
 
-sequelize.authenticate().then(res => {
-    console.log('数据库链接成功！')
-}).catch(e => {
-    console.log('数据库链接失败!' + e)
-})
+sequelize.authenticate()
+    .then(res => {})
+    .catch(e => console.log('数据库链接失败!' + e))
 
 // 链接redis数据库
 const client = redis.createClient(redisConfig); 
 
-client.on("error", function (err) {
-    console.log("Error " + err);
-});
+client.on("error", err => console.log("Redis Error " + err));
 
 module.exports = {
     sequelize,
